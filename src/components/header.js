@@ -15,7 +15,6 @@ const Header = ({ siteTitle, img }) => {
     width: showMenu === false ? "0%" : "100%",
     config: { duration: 1000 },
   })
-  console.log(img)
 
   return (
     <header className="">

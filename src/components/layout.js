@@ -12,6 +12,7 @@ import { AniLink as Link } from "gatsby-plugin-transition-link/AniLink"
 import Header from "./header"
 import Footer from "./footer"
 import "../assets/sass/_styles.scss"
+import SEO from "./seo"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} img={data.PourOverImg} />
+      <SEO />
       <div>
         <main>{children}</main>
         <Footer />

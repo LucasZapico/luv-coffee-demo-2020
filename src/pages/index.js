@@ -11,7 +11,7 @@ import Car from "../assets/images/car.svg"
 
 const HomePage = ({ data }) => {
   const docs = data.docs.edges
-  console.log(data.featuredImg)
+
   // const onMove = useCallback(({ clientX: x, clientY: y }) => set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }), [])
   const onScroll = useCallback(e => console.dir(e.target))
   return (
@@ -35,7 +35,7 @@ const HomePage = ({ data }) => {
                 swipe
                 direction="left"
                 to="shop"
-                className="btn btn__pri dib no-underline   ph3 pv2 mb3"
+                className="btn btn__pri dib no-underline ph3 pv2 mb3"
               >
                 Find Your New Brew
               </Link>

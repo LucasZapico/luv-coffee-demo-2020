@@ -7,10 +7,14 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "lu",
-    description: "A collection of styles used alot by Lucas",
-    author: "@NorthernWindSouthernSun",
+    title: "Luv Coffee",
+    titleTemplate: "%s · LuvCoffee2020.netlify.app",
+    description: "A demo of a wonderful coffee roaster",
+    author: "https://lucaszapico.space",
     siteUrl: "https://lucaszapico.space",
+    title: "Design.LucasZapico.space",
+    image: "/opengraph-gen.png",
+    twitterUsername: "@deginlucas",
   },
   plugins: [
     "gatsby-plugin-sass",

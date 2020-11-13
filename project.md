@@ -1,7 +1,8 @@
-# Luca SASS Framework 
+# Luv Coffee
 
-## list 
+### Todo
 
-- [ ] typography
-- [ ] color 
-- [ ] 
+- [ ] google analytics
+- [ ] add open graph
+- [ ] integrate with shopify
+- [ ]
