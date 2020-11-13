@@ -1,0 +1,32 @@
+@import "./base.scss";
+@import "./variables";
+@import "./utilities";
+
+@import "tachyons/css/tachyons";
+@import "./typography";
+@import "./layout";
+@import "./color";
+
+@import "./theme";
+
+//-------------------//
+@import "./button-links-cta";
+// @import "./code";
+
+//----Components------//
+// @import "./components/footer";
+// @import "./components/nav";
+// @import "./components/form";
+
+//----Pages------//
+@import "./pages/style-guide";
+
+// app 
+
+.mark {
+  &.hero {
+    svg {
+      height: 12rem;
+    }
+  }
+}

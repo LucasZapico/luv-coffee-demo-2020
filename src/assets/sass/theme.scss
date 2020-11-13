@@ -1,0 +1,116 @@
+.html,
+body {
+  font-family: $base-family;
+}
+
+.hero {
+  &__img {
+    min-height: 200vh;
+    padding-bottom: 3rem;
+  }
+}
+
+/***
+**  Colors Classes 
+***/
+
+.bg {
+  &__pri {
+    background-color: $color-pri;
+    color: $color-sec;
+
+    a {
+      color: $color-sec;
+    }
+  }
+
+  &__sec {
+    background-color: $color-sec;
+    color: $color-pri;
+
+    a {
+      color: $color-pri;
+    }
+  }
+
+  &__tri {
+    background-color: $color-tri;
+    color: $color-pri;
+
+    a {
+      color: $color-pri;
+    }
+  }
+
+  &__quad {
+    background-color: $color-quad;
+    color: $color-pri;
+
+    a {
+      color: $color-pri;
+    }
+  }
+
+  &__light {
+    background-color: $color-grey-1;
+    color: $color-sec;
+
+    a {
+      color: $color-sec;
+    }
+
+  }
+}
+
+.color {
+  &__pri {
+    color: $color-pri;
+  }
+
+  &__sec {
+    color: $color-sec;
+  }
+
+  &__tri {
+    color: $color-tri;
+  }
+
+  &__quad {
+    color: $color-quad;
+  }
+}
+
+.card {
+  &__product {
+    &:hover {}
+  }
+}
+
+// Form Subscribe
+
+
+.form.subscribe {
+  input {
+    border: none;
+    transition: all ease-in-out .2s;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .email {
+    background-color: darken($color-tri, 10%);
+
+    &:hover,
+    &:focus {
+      background-color: lighten($color-tri, 10%);
+    }
+  }
+
+  .submit {
+    background-color: $color-pri;
+
+  }
+}
