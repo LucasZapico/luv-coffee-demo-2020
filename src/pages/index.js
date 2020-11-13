@@ -72,29 +72,7 @@ const HomePage = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="bg__tri pb6 pv5">
-          <h3 className="f3 script tc mb0">Subscribe and Save</h3>
-          <div className="f2 tc head mt0">Choose</div>
-          <div className="flex flex-wrap flex-column flex-row-l mt5 justify-around">
-            <div className="relative pa2 mv5">
-              <CoffeeGroup className="center__abs o-30" />
-              <div className="head f2 tc ">Your Beans</div>
-              {/* <div className="body">
-                Get your favorite or favorite of the week. Change your
-                subscription any time
-              </div> */}
-            </div>
-            <div className="relative pa2 mv5">
-              <CupsGroup className="center__abs o-30" />
-              <div className="head f2 tc">You Amount</div>
-            </div>
-            <div className="relative pa2 mv5">
-              <Car className="center__abs o-30" />
-              <div className="head f2 tc">Get it and Enjoy</div>
-            </div>
-          </div>
-        </div>
-        <div className="  pv5 bg__light">
+        <div className="  pv5 bg__light ">
           <div className="f2 tc head">Our Beans and Blends</div>
           <div className="flex mh3 justify-around flex-row-l flex-column ">
             {/* card start */}
@@ -149,6 +127,28 @@ const HomePage = ({ data }) => {
                 <div className="btn btn__pri mt3 z-1 child">Add Cart</div>
               </div>
               <CoffeePlant class="absolute o-40 z-0" />
+            </div>
+          </div>
+        </div>
+        <div className="bg__tri pb6 pv5">
+          <h3 className="f3 script tc mb0">Subscribe and Save</h3>
+          <div className="f2 tc head mt0">Choose</div>
+          <div className="flex flex-wrap flex-column flex-row-l mt5 justify-around">
+            <div className="relative pa2 mv5">
+              <CoffeeGroup className="center__abs o-30" />
+              <div className="head f2 tc ">Your Beans</div>
+              {/* <div className="body">
+                Get your favorite or favorite of the week. Change your
+                subscription any time
+              </div> */}
+            </div>
+            <div className="relative pa2 mv5">
+              <CupsGroup className="center__abs o-30" />
+              <div className="head f2 tc">You Amount</div>
+            </div>
+            <div className="relative pa2 mv5">
+              <Car className="center__abs o-30" />
+              <div className="head f2 tc">Get it and Enjoy</div>
             </div>
           </div>
         </div>
