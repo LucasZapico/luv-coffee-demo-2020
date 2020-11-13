@@ -57,7 +57,7 @@ const AboutPage = () => {
             </div>
             <div className="measure">
               These are the things that didn't make in durning period I lotted
-              for the projects, or features that need a some more love.
+              for the projects, or features that need some more love.
               <ul className="mt2">
                 <li>I would like to make scroll to next section</li>
                 <li>
@@ -84,7 +84,7 @@ const AboutPage = () => {
               example, community position, market differentiation from a
               business and social perspective.
               <div className="f5 mb2 mt3">Mark/Logo</div>
-              Concept and desgined by{" "}
+              Concept and designed by{" "}
               <a href="https://design.lucaszapico.space">Lucas Zapico</a>, there
               was a Pinterest search and some inspiration from my own person
               collection of Marks.
@@ -159,7 +159,8 @@ const AboutPage = () => {
               UI was designed in <a href="https://figma.com">Figma</a> by{" "}
               <a href="https://design.lucaszapico.space">design.Lucas Zapico</a>
               <div className="f5 mb2 mt3">Illustration</div>
-              UI was designed in <a href="https://figma.com">Figma</a> by{" "}
+              Pencil and paper illustration was designed in{" "}
+              <a href="https://figma.com">Figma</a> by{" "}
               <a href="https://design.lucaszapico.space">design.Lucas Zapico</a>
               <div className="f4 mb2 mt4" id="development">
                 Development
