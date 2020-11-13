@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import ProductCard from "../components/product-card"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 
 const demoArr = [1, 2, 3, 4, 5]
 
