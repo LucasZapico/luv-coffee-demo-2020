@@ -12,7 +12,7 @@ module.exports = {
     description: "A demo of a wonderful coffee roaster",
     author: "https://lucaszapico.space",
     siteUrl: "https://lucaszapico.space",
-    title: "Design.LucasZapico.space",
+    title: "Luv Coffee",
     image: "/opengraph-gen.png",
     twitterUsername: "@deginlucas",
   },
