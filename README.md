@@ -27,6 +27,7 @@ This was an exercise to go through production with the objective of increase my 
 
 These are the things that didn't make in durning period I lotted for the projects, or features that need some more love.
 
+- enhance the home page bean shopping experience (make if more capturing)
 - lazy load main background image
 - I would like to make scroll to next section
 - I think there is room for some animations to enhance the experience
