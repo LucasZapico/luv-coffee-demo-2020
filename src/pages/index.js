@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect } from "react"
+import React, { useCallback, useEffect, useRef } from "react"
 import { graphql } from "gatsby"
+import { useSpring, animated as a } from "react-spring"
 import Link from "gatsby-plugin-transition-link/AniLink"
 import Img from "gatsby-image"
 import Mark from "../assets/images/mark.svg"
@@ -8,9 +9,28 @@ import CoffeeGroup from "../assets/images/beans-1.svg"
 import CoffeePlant from "../assets/images/coffee-plant-1.svg"
 import CupsGroup from "../assets/images/cups-1.svg"
 import Car from "../assets/images/car.svg"
+import ProductCard from "../components/product-card"
+
+const calc = o => `translateY(${o * -0.1}px)`
 
 const HomePage = ({ data }) => {
   const docs = data.docs.edges
+  const ref = useRef()
+  const [{ offset }, set] = useSpring(() => ({ offset: 0 }))
+
+  const handleScroll = () => {
+    const posY = ref.current.getBoundingClientRect().top
+    const offset = window.pageYOffset - posY
+    console.log(offset)
+    set({ offset })
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  })
 
   // const onMove = useCallback(({ clientX: x, clientY: y }) => set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }), [])
   const onScroll = useCallback(e => console.dir(e.target))
@@ -25,9 +45,11 @@ const HomePage = ({ data }) => {
           <div className="flex justify-center absolute mark hero w-100 top--1 z-0">
             <Mark />
           </div>
-          <div className="pt6 pl6-l vh-100">
+          <div className="pt6 pl6-l pr3-l vh-100">
             <div className="ph3-l ph5 pv5">
-              <h2 className="fw2 f2  mt3 ma0  script">Coffee made with Love</h2>
+              <h2 className="fw2 f2  mt3 ma0  script">
+                Coffee made something special
+              </h2>
               <div className="f-5-l  f1  head ma0 mb4">
                 Fall in love with Luv&nbsp;Coffee
               </div>
@@ -41,11 +63,20 @@ const HomePage = ({ data }) => {
               </Link>
             </div>
           </div>
-          <div className="relative">
-            <CoffeeGroup className="absolute bottom--3 right-0 o-30" />
+          <div className="relative" ref={ref}>
+            <a.div
+              style={{ transform: offset.interpolate(calc) }}
+              className="absolute bottom--3 right-0"
+            >
+              <CoffeeGroup className=" o-30" />
+            </a.div>
+
             <h3 className="script color__pri f-5 tc">Featured</h3>
             {/* feature card */}
-            <div className="br4 flex flex-wrap  bg__pri mh5-l mh2 mb4 relative h-75 h-100-l">
+            <div
+              style={{ transform: offset.interpolate(calc) }}
+              className="br4 flex flex-wrap  bg__pri mh5-l mh2 mb4 relative h-75 h-100-l"
+            >
               <div className="fl w-50-l w-100 h-100 overflow-hidden br4 flex-grow-1 flex justify-center items-center">
                 <div className="w-100 h-100">
                   <Img
@@ -72,64 +103,6 @@ const HomePage = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="  pv5 bg__light ">
-          <div className="f2 tc head">Our Beans and Blends</div>
-          <div className="flex mh3 justify-around flex-row-l flex-column ">
-            {/* card start */}
-            <div className="w-30-l mv3 bg__pri br4 overflow-hidden relative flex flex-column pb3 card__card hide-child">
-              <Img
-                fluid={data.CoffeeImg.childImageSharp.fluid}
-                objectFit="contain"
-                className=""
-              />
-              <div className="ma3 z-1">
-                <div className="script f5">Single Origin</div>
-                <div className="head f3 flex justify-between">
-                  <div>Columbia Washed</div>
-                  <div>$18</div>
-                </div>
-                <div className="script f6">Apple, Lime, Honey</div>
-                <div className="btn btn__pri mt3 z-1 child">Add Cart</div>
-              </div>
-              <CoffeePlant class="absolute o-40 z-0" />
-            </div>
-            {/* card end */}
-            <div className="w-30-l mv3 bg__pri br4 overflow-hidden relative flex flex-column pb3 hide-child card__card">
-              <Img
-                fluid={data.CoffeeImg.childImageSharp.fluid}
-                objectFit="contain"
-                className=""
-              />
-              <div className="ma3 z-1">
-                <div className="script f5">Single Origin</div>
-                <div className="head f3 flex justify-between">
-                  <div>Columbia Washed</div>
-                  <div>$18</div>
-                </div>
-                <div className="script f6">Apple, Lime, Honey</div>
-                <div className="btn btn__pri mt3 z-1 child">Add Cart</div>
-              </div>
-              <CoffeePlant class="absolute o-40 z-0" />
-            </div>
-            <div className="w-30-l mv3 bg__pri br4 overflow-hidden relative flex flex-column pb3 hide-child card__card">
-              <Img
-                fluid={data.CoffeeImg.childImageSharp.fluid}
-                objectFit="contain"
-                className=""
-              />
-              <div className="ma3 z-1">
-                <div className="script f5">Single Origin</div>
-                <div className="head f3 flex justify-between">
-                  <div>Columbia Washed</div>
-                  <div>$18</div>
-                </div>
-                <div className="script f6">Apple, Lime, Honey</div>
-                <div className="btn btn__pri mt3 z-1 child">Add Cart</div>
-              </div>
-              <CoffeePlant class="absolute o-40 z-0" />
-            </div>
-          </div>
-        </div>
         <div className="bg__tri pb6 pv5">
           <h3 className="f3 script tc mb0">Subscribe and Save</h3>
           <div className="f2 tc head mt0">Choose</div>
@@ -149,6 +122,36 @@ const HomePage = ({ data }) => {
             <div className="relative pa2 mv5">
               <Car className="center__abs o-30" />
               <div className="head f2 tc">Get it and Enjoy</div>
+            </div>
+          </div>
+        </div>
+        <div className="  pv5 bg__light ">
+          <h3 className="f3 script tc mb0">
+            Sourced with care and consideration
+          </h3>
+          <div className="f2 tc head mb5">Our Beans and Blends</div>
+          <div className="f3 head mb3 mh4">Single Origin</div>
+          <div className="flex mh3 justify-around flex-row-l flex-column ">
+            <div className="w-30-l w-100 mv3">
+              <ProductCard data={data} />
+            </div>
+            <div className="w-30-l w-100 mv3">
+              <ProductCard data={data} />
+            </div>
+            <div className="w-30-l w-100 mv3">
+              <ProductCard data={data} />
+            </div>
+          </div>
+          <div className="f3 head mb3 mh4">Seasonal</div>
+          <div className="flex mh3 justify-around flex-row-l flex-column ">
+            <div className="w-30-l w-100 mv3">
+              <ProductCard data={data} />
+            </div>
+            <div className="w-30-l w-100 mv3">
+              <ProductCard data={data} />
+            </div>
+            <div className="w-30-l w-100 mv3">
+              <ProductCard data={data} />
             </div>
           </div>
         </div>
