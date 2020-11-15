@@ -11,7 +11,7 @@ import CupsGroup from "../assets/images/cups-1.svg"
 import Car from "../assets/images/car.svg"
 import ProductCard from "../components/product-card"
 
-const calc = o => `translateY(${o * -0.1}px)`
+const calc = o => `translateY(${o * -0.05}px)`
 
 const HomePage = ({ data }) => {
   const docs = data.docs.edges
